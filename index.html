@@ -106,7 +106,18 @@
     //   minusThree.count() // returns null
     //   minusThree.count() // returns null
     class CountDown {
-      
+      constructor(number) {
+        this.number = number + 1
+        this.str;
+      }
+      count() {
+        this.number--
+        this.str = this.number.toString() + '!';
+        if (this.number === 0) {return "Liftoff!"}
+        if (this.number < 0) {return null}
+        return this.str
+
+      }
     }
 
     // 🧪 TESTS, do not work below this line
