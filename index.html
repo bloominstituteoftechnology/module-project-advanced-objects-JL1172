@@ -47,8 +47,24 @@
     // 🧠 Calling `down` changes the `altitude` prop appropriately and returns the updated `altitude`.
     // 🧠 If calling `down` would cause the plane to go below altitude zero, `altitude` is set to 0 and the string "CRASH!" is returned.
     class AirPlane {
-      
-    }
+      constructor(plane) {
+        this.model = plane
+        this.altitude = 0
+      }
+      up(meter) {
+        this.altitude += meter //
+        return this.altitude
+      }
+      down(meter) {
+        this.altitude -= meter
+        if (this.altitude < 0) {
+          this.altitude = 0
+          return 'CRASH!'
+        }
+        return this.altitude
+      }
+      }
+    
 
     // 👉 CHALLENGE 3
     // 🧠 Build a Bulb class.
@@ -57,8 +73,23 @@
     // 🧠 The methods work as one might expect, changing the value of `isOn` to the appropriate Boolean.
     // 🧠 The methods also return one of these two strings: "You turned the bulb ON", or "You turned the bulb OFF".
     class Bulb {
-
+      isOn = false
+      turnOn() {
+        this.isOn = true
+        return "You turned the bulb ON"
+      }
+      turnOff() {
+        this.isOn = false
+        return "You turned the bulb OFF"
+      }
+      toggle() {
+        !this.isOn ? this.isOn = true : 
+        this.isOn = false; //ternary operator 
+        if (this.isOn) {return "You turned the bulb ON"}
+        if (!this.isOn) {return "You turned the bulb OFF"};
+      }
     }
+    
 
     // 👉 CHALLENGE 4
     // 🧠 Build a CountDown class that can count down starting at any number we pass to the constructor.
@@ -75,7 +106,7 @@
     //   minusThree.count() // returns null
     //   minusThree.count() // returns null
     class CountDown {
-
+      
     }
 
     // 🧪 TESTS, do not work below this line
